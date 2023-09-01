@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 Color scaffoldBgColor = Color(0xFFF4F4F4);
-Color primaryColor = Color(0xFFF2647C);
-Color darkPrimaryColor = Color(0xFFCA445D);
+Color primaryColor = Colors.green; //Changed to Green Color
+Color darkPrimaryColor = Color.fromRGBO(46, 125, 50, 1); //Changed to darkGreen
 Color greyColor = Colors.grey;
 Color whiteColor = Colors.white;
 Color blackColor = Colors.black;

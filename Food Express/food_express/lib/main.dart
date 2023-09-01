@@ -19,15 +19,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Food Express',
       theme: ThemeData(
-        primaryColor: primaryColor,
-        primarySwatch: Colors.red,
+      primaryColor: primaryColor, //Changed the PrimaryColor to Green
+        primarySwatch: Colors.green, //Changed the PrimarySwatch to Green
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: primaryColor,
         ),
         tabBarTheme: TabBarTheme(
-          labelColor: Colors.grey[300],
-          unselectedLabelColor: whiteColor,
+      labelColor: Colors.grey[300],
+          unselectedLabelColor: Colors.white
         ),
       ),
       debugShowCheckedModeBanner: false,
