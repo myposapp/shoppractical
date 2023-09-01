@@ -10,6 +10,8 @@ import 'package:food_express/pages/search/search.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:food_express/pages/notification.dart';
 
+import '../../constant/constant.dart';
+
 class HomeMain extends StatefulWidget {
   @override
   _HomeMainState createState() => _HomeMainState();
@@ -194,7 +196,7 @@ class _HomeMainState extends State<HomeMain> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            'Favourite Restaurants',
+                            'Digital Product', //Changed from favourite restuarant to digital product
                             style: headingStyle,
                           ),
                           InkWell(
