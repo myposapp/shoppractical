@@ -3,6 +3,120 @@ import 'package:food_express/constant/constant.dart';
 import 'package:food_express/pages/home/home.dart';
 import 'package:food_express/pages/confirm_order_add_address/add_new_address.dart';
 
+
+/*
+                            DETAILS ON HOW TO CONFIGURE PAYSTACK
+
+1.  Create a Paystack Account: If you dont have a paystack account you could easily create one by
+creating free account on paystack website https://paystack.com/. Fill in neccessary credentails and sign up.
+
+2.  Acquire Api keys: On your Dashboard you can find the Api secret and public keys by scrolling a little down
+or you could navigate to "Settings" > "API Keys & Webhooks." to get your Keys. Mind you, on default your account 
+will be on test mode so any transaction made is not live yet but will get responses as if you are using live keys.
+
+3.  Add Dependencies: In your pubspec.yaml file you add flutter_paystack: ^1.0.7 or later package to the dependencies save and
+run the package by typing "flutter pub get" in your terminal.
+
+4.  Create Payment class: After all done, you create a dart file and then make neccessary imports e.g the paystack package
+import 'package:flutter_paystack/flutter_paystack.dart';. 
+        - Create a class
+        - Store your Key somewhere for use like this const String PAYSTACK_KEY = "pk_************************";
+        - Create neccessary properties you have to pass to the class and generate its constructor
+        - Initialize Paystack 
+        - And do the Payment workflow
+
+                                    Code Example Snippet on the Implementation
+const String PAYSTACK_KEY = "pk_*******************************";
+
+class PayStackPayment {
+
+  final int? price;
+  final String? email;
+  final String? name;
+  final BuildContext? ctx;
+
+  PayStackPayment({
+    this.price,
+    this.email,
+    this.name,
+    this.ctx,
+  });
+
+
+  String _getReference() {
+    String platform;
+    if (Platform.isIOS) {
+      platform = 'IOS';
+    } else {
+      platform = 'ANDROID';
+    }
+
+    return 'ChargedFrom${platform}_${DateTime.now().millisecondsSinceEpoch}';
+  }
+
+  PaystackPlugin payStackPlugin = PaystackPlugin();
+
+  Future initializePlugin() async {
+    await payStackPlugin.initialize(publicKey: PAYSTACK_KEY);
+  }
+
+/CARD UI FIELDS
+  PaymentCard _getCardUi() {
+    return PaymentCard(
+      number: "",
+      cvc: "",
+      expiryMonth: 0,
+      expiryYear: 0,
+      name: name,
+    );
+  }
+
+/METH0D F0R CHARGING A CARD
+  chargeCardANdMakePayment() async {
+    initializePlugin().then((value) async {
+      Charge charge = Charge()
+        ..amount = price! * 100 //Paystack do their amount in Kobo thats the reason for multiplying
+        ..email = email
+        ..reference = _getReference() //The _getRefrence most times is used to detect Multiple transactions
+        ..card = _getCardUi(); 
+
+      CheckoutResponse res = await payStackPlugin.checkout(
+        ctx!,
+        logo: SizedBox(
+            height: 50, width: 50, child: Image.asset("IMAGEPATH")),
+        charge: charge,
+        method: CheckoutMethod.card,  // You could use Selectable which include the Bank and Card method. The issue here 
+        is the using Bank requires accessCode.
+        fullscreen: true, //Boolean check for either to show as a dialog or in fullscreen
+        hideAmount: false, // Its false because we dont want to hide amount
+        hideEmail: false, 
+      );
+     
+
+      if (res.status == true) {
+        /Transaction is Successful
+        snackBar(
+            content: "Transaction Successful",
+            context: ctx!,
+            backgroundColor: green);
+      } else {
+        /Transaction Failed
+        log(res.message.toString()); //This line is to Print the error message so we can Debug
+        snackBar(
+            content: res.message, context: ctx!, backgroundColor: Colors.red); 
+            
+      }
+    });
+  }
+}
+
+
+
+ps: - These are steps for local transactions(In-app Using the Paystack Plugin) and not for server. Using server will 
+      only require using webview with the link provided by the backend developer. 
+    - Using Test Mode you are required to use Test Cards for fake payments, when you want to switch to live ans get live keys
+      you can do that by opening your Paystack account Dashboard > at the top right side you see test mode > Click and fill in required fields.
+*/
 class ConfirmOrder extends StatefulWidget {
   @override
   _ConfirmOrderState createState() => _ConfirmOrderState();
