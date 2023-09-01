@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Food Express - Food Ordering App UI in Flutter v3.8</title>
+
+    <!-- CSS style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/fontello.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/js/google-code-prettify/prettify.css"
+    />
+
+    <!-- Google web fonts -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/globals.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/js/google-code-prettify/prettify.js"
+    ></script>
+
+    <style type="text/css">
+      img {
+        max-width: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          Food Express - Food Ordering App UI in Flutter v3.8
+        </div>
+        <div class="slogan">Fabulous UI in Flutter</div>
+      </div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+      <div class="author">
+        Created: <strong>29/07/2020</strong><br />
+        Last Update: <strong>05/03/2022</strong><br />
+        By:
+        <strong
+          ><a
+            href="https://codecanyon.net/user/render_code/portfolio"
+            target="_blank"
+            >render_code</a
+          ></strong
+        ><br />
+        Profile:
+        <strong
+          ><a href="https://codecanyon.net/user/render_code" target="_blank"
+            >www.codecanyon.net.com/user/render_code</a
+          ></strong
+        ><br />
+        E-mail:
+        <strong
+          ><a href="mailto:rendercodetechnology@gmail.com"
+            >rendercodetechnology@gmail.com</a
+          ></strong
+        ><br />
+      </div>
+      <p>&nbsp;</p>
+
+      <h2 class="alt">Table of Contents</h2>
+      <ol class="alpha">
+        <li><a href="#basic">Basic Information</a></li>
+        <li><a href="#file">Directories & File Uses</a></li>
+        <li><a href="#map">About Google Map Configuration</a></li>
+        <li><a href="#question">Still have a question?</a></li>
+        <li><a href="#contact">Contact US</a></li>
+      </ol>
+
+      <hr />
+      <h3 id="basic">A) Basic Information</h3>
+
+      <ul>
+        <li><b>Flutter Version</b> - 3.7.6</li>
+        <li><b>Dart Version</b> - 2.19.3</li>
+        <li>
+          <b>Install Flutter</b> - See guide according to your operating system.
+        </li>
+        <ul>
+          <li>
+            <b>Windows</b>-
+            <span
+              ><a
+                href="https://flutter.dev/docs/get-started/install/windows"
+                target="_blank"
+                >https://flutter.dev/docs/get-started/install/windows</a
+              ></span
+            >
+          </li>
+          <li>
+            <b>macOS</b>-
+            <span
+              ><a
+                href="https://flutter.dev/docs/get-started/install/macos"
+                target="_blank"
+                >https://flutter.dev/docs/get-started/install/macos</a
+              ></span
+            >
+          </li>
+          <li>
+            <b>Linux</b>-
+            <span
+              ><a
+                href="https://flutter.dev/docs/get-started/install/linux"
+                target="_blank"
+                >https://flutter.dev/docs/get-started/install/linux</a
+              ></span
+            >
+          </li>
+        </ul>
+        <li>
+          <b>Set up an editor</b> -
+          <span
+            ><a
+              href="https://flutter.dev/docs/get-started/editor"
+              target="_blank"
+              >https://flutter.dev/docs/get-started/editor</a
+            ></span
+          >
+        </li>
+        <li>
+          <b>Build Our App</b> - Open <b>food_express</b> folder on your
+          selected IDE (Android Studio or VSCode). Run <b>flutter pub get</b>.
+          Then follow below guide.
+        </li>
+        <ul>
+          <li>
+            <a
+              href="https://flutter.dev/docs/get-started/test-drive?tab=vscode"
+              target="_blank"
+              >https://flutter.dev/docs/get-started/test-drive</a
+            >
+            <b>Run the App</b> Section
+          </li>
+        </ul>
+        <li>
+          <b>Change App Icon</b>-
+          <span
+            ><a
+              href="https://pub.dev/packages/flutter_launcher_icons"
+              target="_blank"
+              >https://pub.dev/packages/flutter_launcher_icons</a
+            ></span
+          >
+        </li>
+        <li>
+          <b>Change Package Name</b>-
+          <span
+            ><a
+              href="https://stackoverflow.com/questions/51534616/how-to-change-package-name-in-flutter"
+              target="_blank"
+              >https://stackoverflow.com/questions/51534616/how-to-change-package-name-in-flutter</a
+            ></span
+          >
+        </li>
+        <li>
+          <b>Build & Release Android App</b>-
+          <span
+            ><a
+              href="https://flutter.dev/docs/deployment/android"
+              target="_blank"
+              >https://flutter.dev/docs/deployment/android</a
+            ></span
+          >
+        </li>
+        <li>
+          <b>Build & Release iOS App</b>-
+          <span
+            ><a href="https://flutter.dev/docs/deployment/ios" target="_blank"
+              >https://flutter.dev/docs/deployment/ios</a
+            ></span
+          >
+        </li>
+      </ul>
+
+      <hr />
+      <h3 id="file">B) Directories & File Uses</h3>
+
+      <p>
+        Our Design uses only assets & lib folder. So, don't touch any other
+        folder for ui changes.
+      </p>
+
+      <ul>
+        <ul>
+          <li>
+            <b>assets(Folder)</b> - Put all Static images & other data (in Our
+            Case images & json file) in this folder
+          </li>
+          <img src="img/assets.jpg" />
+          <li><b>fonts(Folder)</b> - Put all font file in this folder</li>
+          <img src="img/fonts.jpg" />
+          <li>
+            <b>lib(Folder)</b> - Main folder that contains all the dart code
+          </li>
+          <img src="img/lib.jpg" />
+          <ul>
+            <li>
+              <b>appBehaviour(Folder)</b> - App behaviour file for our app.
+              (Remove ripple effect).
+            </li>
+            <li>
+              <b>constant(Folder)</b> - Contain Constants (fixPadding,
+              textstyle, etc) in this folder
+            </li>
+            <li>
+              <b>Pages(Folder)</b> - Contain All App Pages in this folder except
+              <b>main.dart</b>
+            </li>
+            <ul>
+              <li>
+                <b>confirm_order_add_address(Folder)</b> - Contain Confirm order
+                page and add new address page code in this folder.
+              </li>
+              <center><img src="img/confirm_order.png" width="200px" /></center>
+              <center>
+                <img src="img/add_new_address.png" width="200px" />
+              </center>
+              <li>
+                <b>favourite(Folder)</b> - Contain all favourite tab related
+                pages in this folder.
+              </li>
+              <center><img src="img/favourite.png" width="200px" /></center>
+              <li>
+                <b>home(Folder)</b> - Contain All the Component that use in
+                Discover Page in this folder
+              </li>
+              <center><img src="img/home.png" width="200px" /></center>
+              <li>
+                <b>login_signup(Folder)</b> - Contain Login, register and otp
+                Page
+              </li>
+              <center><img src="img/login.png" width="200px" /></center>
+              <center><img src="img/register.png" width="200px" /></center>
+              <center><img src="img/otp.png" width="200px" /></center>
+              <li><b>nearby(Folder)</b> - Contain Nearby tab Page</li>
+              <center><img src="img/nearby.png" width="200px" /></center>
+              <li>
+                <b>onboarding(Folder)</b> - Contain all Onboarding relared file
+              </li>
+              <center><img src="img/onboarding_1.png" width="200px" /></center>
+              <center><img src="img/onboarding_2.png" width="200px" /></center>
+              <center><img src="img/onboarding_3.png" width="200px" /></center>
+              <li><b>order(Folder)</b> - Contain all order tab relared file</li>
+              <center><img src="img/order.png" width="200px" /></center>
+              <center><img src="img/track_order.png" width="200px" /></center>
+              <li>
+                <b>profile(Folder)</b> - Contain All Profile related files in
+                this folder
+              </li>
+              <center><img src="img/profile_1.png" width="200px" /></center>
+              <center><img src="img/profile_2.png" width="200px" /></center>
+              <center><img src="img/profile_3.png" width="200px" /></center>
+              <center><img src="img/profile_4.png" width="200px" /></center>
+              <li>
+                <b>restaurant(Folder)</b> - Contain Restaurant Page related file
+                in this folder
+              </li>
+              <center><img src="img/restaurant_1.png" width="200px" /></center>
+              <center><img src="img/restaurant_2.png" width="200px" /></center>
+              <center><img src="img/restaurant_3.png" width="200px" /></center>
+              <li>
+                <b>search(Folder)</b> - Contain Search Page related file in this
+                folder
+              </li>
+              <center><img src="img/search.png" width="200px" /></center>
+              <center><img src="img/search-result.png" width="200px" /></center>
+              <li><b>notifications.dart(File)</b> - Notification Page</li>
+              <center><img src="img/notifications.png" width="200px" /></center>
+              <li><b>splashScreen.dart(File)</b> - Splashscreen code</li>
+              <center><img src="img/splash.png" width="200px" /></center>
+            </ul>
+          </ul>
+          <li>
+            <b>widget(Folder)</b> - Contain all our own created widget file.
+            (Column Builder).
+          </li>
+          <li><b>main.dart</b> - Entry Point of Our App.</li>
+        </ul>
+      </ul>
+
+      <ul>
+        <li>
+          <b>pubspec.yaml(File)</b> - Specification file (All the package and
+          local assets (Like Images, Fonts, etc.) we use in this application is
+          specify in this file.).
+        </li>
+        <li><b>Packages (Dependencies)</b></li>
+        <img src="img/dependencies.jpg" />
+        <li><b>Assets</b></li>
+        <img src="img/assets_pub.jpg" />
+        <li><b>Fonts</b></li>
+        <img src="img/fonts_pub.jpg" />
+      </ul>
+
+      <hr />
+      <h3 id="map">C) About Google Map Configuration</h3>
+      <p>
+        We use
+        <a href="https://pub.dev/packages/google_maps_flutter" target="_blank"
+          ><b>google_maps_flutter</b></a
+        >
+        package for google map.
+      </p>
+      <p>You need Google Map Api key for Accessing Google Map.</p>
+
+      <ul>
+        <li>
+          If you want to know how to get Google Map Api Key then please visit
+          this link
+          <a href="https://pub.dev/packages/google_maps_flutter" target="_blank"
+            ><b>google_maps_flutter</b></a
+          >.
+        </li>
+        <h4>1) Android</h4>
+        <li>Put that api key in 2 places in our code.</li>
+        <ul>
+          <li>
+            <b>food_express/android/app/src/main/AndroidManifest.xml</b> line
+            number 42. (Please refer below image)
+          </li>
+          <img src="img/manifest.jpg" />
+          <li>
+            <b>food_express/lib/pages/order/track_order_map.dart</b> line number
+            28. (Please refer below image)
+          </li>
+          <img src="img/track-order-api.jpg" />
+        </ul>
+        <h4>2) iOS</h4>
+        <li>Put that api key in 2 places in our code.</li>
+        <ul>
+          <li>
+            <b>food_express/ios/Runner/AppDelegate.swift</b> line number
+            11. (Please refer below image)
+          </li>
+          <img src="img/map_ios.jpg" />
+          <li>
+            <b>food_express/lib/pages/order/track_order_map.dart</b> line number
+            28. (Please refer below image)
+          </li>
+          <img src="img/track-order-api.jpg" />
+        </ul>
+      </ul>
+
+      <hr />
+
+      <h3 id="question">D) Still Have a Question?</h3>
+
+      <p>
+        Please mail us on
+        <span
+          ><b
+            ><a href="mailto:rendercodetechnology@gmail.com"
+              >rendercodetechnology@gmail.com</a
+            ></b
+          ></span
+        >
+      </p>
+
+      <hr />
+
+      <h3 id="contact">E) Contact US</h3>
+
+      <p>
+        If you have any kind of problem with this code then please mail us on
+        <span
+          ><b
+            ><a href="mailto:rendercodetechnology@gmail.com"
+              >rendercodetechnology@gmail.com</a
+            ></b
+          ></span
+        >
+      </p>
+
+      <p>
+        If you have any project in flutter then please contact us. We are
+        experiance flutter developer team and build high quality apps for
+        android and ios.
+      </p>
+      <hr />
+
+      <p>
+        Once again, thank you so much for purchasing this item. As I said at the
+        beginning, I'd be glad to help you if you have any questions relating to
+        this item. No guarantees, but I'll do my best to assist. If you have a
+        more general question relating to the application on Codecanyon, you
+        might consider visiting the forums and asking your question in the "Item
+        Discussion" section.
+      </p>
+    </div>
+
+    <!-- Social profiles -->
+    <footer>
+      <div class="container" style="color: #ffffff">
+        Feel Free To Contact Us
+        <span
+          ><a href="mailto:rendercodetechnology@gmail.com"
+            >rendercodetechnology@gmail.com</a
+          ></span
+        >
+      </div>
+    </footer>
+
+    <!-- Go to top arrow -->
+    <div class="totop">
+      <div class="gototop">
+        <div class="arrowgototop"></div>
+      </div>
+    </div>
+  </body>
+</html>
