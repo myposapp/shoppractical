@@ -168,7 +168,7 @@ class _HomeMainState extends State<HomeMain> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            'Products Ordered',
+                            'Physical Product', //Changed text to physical product
                             style: headingStyle,
                           ),
                           InkWell(
