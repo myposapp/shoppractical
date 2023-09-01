@@ -220,7 +220,7 @@ class _HomeMainState extends State<HomeMain> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            'Hot Sale',
+                            'Online Product', //Changed text from hot sales to online product
                             style: headingStyle,
                           ),
                           InkWell(
